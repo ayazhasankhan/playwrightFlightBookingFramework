@@ -11,10 +11,10 @@ test.describe("Flight Search Tests", () => {
         await flightSearch.goToFlightSearch();
        // await flightSearch.selectEnglishUK();
         await flightSearch.selectOneWayTrip();
-        await flightSearch.enterDestination();
       });
 
     test("Verify flights from DEL to BOM are displayed for today", async ({ page }) => {
+        await flightSearch.enterDestination();
         const todayDate = getFormattedDate(0);
         await flightSearch.enterTravellDate(todayDate);
         await flightSearch.selectPassengers(2);
@@ -22,9 +22,15 @@ test.describe("Flight Search Tests", () => {
     });
 
     test("Verify flights from DEL to BOM are displayed for tomorrow", async ({ page }) => {
+        await flightSearch.enterDestination();
         const tomarrowDate = getFormattedDate(1);
         await flightSearch.enterTravellDate(tomarrowDate);
         await flightSearch.selectPassengers(2);
         await flightSearch.clickSearchAndWaitForResponse();
+    });
+
+    test("Attempt search without entering a departure airport", async ({ page }) => {
+        await flightSearch.clickSearchAndWaitForResponse();
+        await flightSearch.validateErrorMessage();
     });
 });

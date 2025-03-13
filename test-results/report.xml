@@ -1,6 +1,6 @@
-<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="17.069373">
-<testsuite name="spec/flightSearch.spec.ts" timestamp="2025-03-13T05:16:55.284Z" hostname="Desktop Chrome" tests="2" failures="0" skipped="0" time="15.109" errors="0">
-<testcase name="Flight Search Tests › Verify flights from DEL to BOM are displayed for today" classname="spec/flightSearch.spec.ts" time="7.273">
+<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="27.860947">
+<testsuite name="spec/flightSearch.spec.ts" timestamp="2025-03-13T06:09:30.440Z" hostname="Desktop Chrome" tests="3" failures="0" skipped="0" time="25.905" errors="0">
+<testcase name="Flight Search Tests › Verify flights from DEL to BOM are displayed for today" classname="spec/flightSearch.spec.ts" time="13.543">
 <system-out>
 <![CDATA[Search request completed with status: 200
 
@@ -10,13 +10,23 @@
 ]]>
 </system-out>
 </testcase>
-<testcase name="Flight Search Tests › Verify flights from DEL to BOM are displayed for tomorrow" classname="spec/flightSearch.spec.ts" time="7.836">
+<testcase name="Flight Search Tests › Verify flights from DEL to BOM are displayed for tomorrow" classname="spec/flightSearch.spec.ts" time="8.403">
 <system-out>
 <![CDATA[Search request completed with status: 200
 
 [[ATTACHMENT|spec-flightSearch-Flight-S-e1aa2--are-displayed-for-tomorrow-Desktop-Chrome/video.webm]]
 
 [[ATTACHMENT|spec-flightSearch-Flight-S-e1aa2--are-displayed-for-tomorrow-Desktop-Chrome/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Flight Search Tests › Attempt search without entering a departure airport" classname="spec/flightSearch.spec.ts" time="3.959">
+<system-out>
+<![CDATA[Search request completed with status: 200
+
+[[ATTACHMENT|spec-flightSearch-Flight-S-70652-ntering-a-departure-airport-Desktop-Chrome/video.webm]]
+
+[[ATTACHMENT|spec-flightSearch-Flight-S-70652-ntering-a-departure-airport-Desktop-Chrome/trace.zip]]
 ]]>
 </system-out>
 </testcase>

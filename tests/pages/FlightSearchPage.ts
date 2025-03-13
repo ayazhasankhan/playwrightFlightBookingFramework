@@ -1,4 +1,4 @@
-import { Page, Locator, Response } from "@playwright/test";
+import { Page, Locator, Response, expect } from "@playwright/test";
 
 export class FlightSearchPage {
     readonly page: Page;
@@ -14,6 +14,7 @@ export class FlightSearchPage {
     readonly increaseAdultButton: Locator;
     readonly doneButton: Locator;
     readonly searchButton: Locator;
+    readonly errorMessage: Locator;
     
 
 
@@ -33,6 +34,7 @@ export class FlightSearchPage {
         this.increaseAdultButton = page.locator('div').filter({ hasText: /^1$/ }).locator('button').nth(1);
         this.doneButton = page.getByRole('button', { name: 'Done' });
         this.searchButton = page.getByRole('button', { name: 'Search' });
+        this.errorMessage = page.getByRole('button', { name: 'Add an airport or city' });
 
         
     }
@@ -45,7 +47,7 @@ export class FlightSearchPage {
         await this.languagePickerButton.click();
         await this.englishUKButton.click();
     }
-    
+
     async selectOneWayTrip() {
         await this.oneWayOption.click();
     }
@@ -92,5 +94,9 @@ export class FlightSearchPage {
 
         console.log(`Search request completed with status: ${response.status()}`);
         return response;
+    }
+
+    async validateErrorMessage() {
+        await expect(this.errorMessage).toBeVisible();
     }
 }
