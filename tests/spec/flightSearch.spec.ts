@@ -9,7 +9,6 @@ test.describe("Flight Search Tests", () => {
     test.beforeEach(async ({ page}) => {
         flightSearch = new FlightSearchPage(page);
         await flightSearch.goToFlightSearch();
-       // await flightSearch.selectEnglishUK();
         await flightSearch.selectOneWayTrip();
       });
 
